@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { Loader, OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
 import './App.css';
+import Portal from './components/models/Portal';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ width: '100%', height: '100vh' }}>
+      <Suspense fallback={<Loader />}>
+        <Canvas>
+          <Portal />
+          <axesHelper args={[100, 100, 100]} />
+          <OrbitControls />
+          <ambientLight intensity={0.5} />
+        </Canvas>
+      </Suspense>
     </div>
   );
 }
