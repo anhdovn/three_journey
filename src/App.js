@@ -12,7 +12,7 @@ function App() {
           <Portal />
           <axesHelper args={[100, 100, 100]} />
           <OrbitControls />
-          <ambientLight intensity={1} color="#fff" />
+          {/* <ambientLight intensity={1} color="#fff" /> */}
         </Canvas>
       </Suspense>
     </div>
