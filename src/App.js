@@ -11,7 +11,7 @@ function App() {
         <Canvas camera={{ position: [0.9309010881956397, 2.2793358244488804, -4.351787145918334] }}>
           <Portal />
           {/* <axesHelper args={[100, 100, 100]} /> */}
-          <OrbitControls />
+          <OrbitControls maxPolarAngle={Math.PI / 2} />
           {/* <ambientLight intensity={1} color="#fff" /> */}
         </Canvas>
       </Suspense>
