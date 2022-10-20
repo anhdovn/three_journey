@@ -1,19 +1,19 @@
 import { shaderMaterial, useGLTF, useTexture } from '@react-three/drei';
-import { extend, useFrame } from '@react-three/fiber';
+import { extend, useFrame, useThree } from '@react-three/fiber';
 import React, { useRef } from 'react';
 import { AdditiveBlending, Color, DoubleSide } from 'three';
 import glsl from 'babel-plugin-glsl/macro';
 import SparklesRandom from '../SparklesRandom';
 
 const Portal = () => {
+  const { camera } = useThree();
   const bakedTexture = useTexture('models/baked-02.jpeg');
   const result = useGLTF('models/portal-2.glb');
   const nodes = result.nodes;
   const portalCircleMaterial = useRef();
   useFrame((state, delta) => {
     portalCircleMaterial.current.uTime += delta;
-    console.log(delta);
-    console.log(portalCircleMaterial.current);
+    console.log(camera);
   });
   return (
     <group>

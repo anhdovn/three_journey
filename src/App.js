@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App" style={{ width: '100%', height: '100vh' }}>
       <Suspense fallback={<Loader />}>
-        <Canvas>
+        <Canvas camera={{ position: [0.9309010881956397, 2.2793358244488804, -4.351787145918334] }}>
           <Portal />
-          <axesHelper args={[100, 100, 100]} />
+          {/* <axesHelper args={[100, 100, 100]} /> */}
           <OrbitControls />
           {/* <ambientLight intensity={1} color="#fff" /> */}
         </Canvas>
