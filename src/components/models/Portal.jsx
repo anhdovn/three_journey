@@ -5,7 +5,7 @@ import { AdditiveBlending, Color, DoubleSide } from 'three';
 import glsl from 'babel-plugin-glsl/macro';
 import SparklesRandom from '../SparklesRandom';
 
-const Portal = () => {
+const Portal = (props) => {
   const { camera } = useThree();
   const bakedTexture = useTexture('models/baked-02.jpeg');
   const result = useGLTF('models/portal-2.glb');
@@ -16,7 +16,7 @@ const Portal = () => {
     console.log(camera);
   });
   return (
-    <group>
+    <group {...props}>
       <SparklesRandom count={50} size={5} scale={[4, 2, 4]} position={[0, 1, 0]} random={true} />
       <group>
         <mesh
