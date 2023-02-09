@@ -13,7 +13,6 @@ const Portal = (props) => {
   const portalCircleMaterial = useRef();
   useFrame((state, delta) => {
     portalCircleMaterial.current.uTime += delta;
-    console.log(camera);
   });
   return (
     <group {...props}>
